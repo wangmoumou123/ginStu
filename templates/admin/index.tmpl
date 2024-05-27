@@ -9,6 +9,10 @@
     <H1>test65{{.title}} </H1>
     <H2>{{.art.Title}}</H2>
     <H2>{{.art.Content}}</H2>
+    {{range $a := .art.Alis}}
+      <p>{{$a}}</p>
+     {{end}}
+
 
     </body>
     </html>
