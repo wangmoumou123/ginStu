@@ -2,6 +2,7 @@ package admin
 
 import (
 	"fmt"
+	"ginStu/controllers/base"
 	"github.com/gin-gonic/gin"
 	"net/http"
 )
@@ -17,6 +18,7 @@ type Tt struct {
 }
 
 type Controller struct {
+	base.Controller
 }
 
 func (con Controller) Index(c *gin.Context) {
@@ -27,10 +29,11 @@ func (con Controller) Index(c *gin.Context) {
 }
 
 func (con Controller) Add(c *gin.Context) {
-	c.JSON(http.StatusOK, gin.H{
-		"key":   "admin",
-		"value": "add",
-	})
+	//c.JSON(http.StatusOK, gin.H{
+	//	"key":   "admin",
+	//	"value": "add",
+	//})
+	con.Controller.Add(c)
 }
 func (con Controller) Edit(c *gin.Context) {
 	c.JSON(http.StatusOK, gin.H{
