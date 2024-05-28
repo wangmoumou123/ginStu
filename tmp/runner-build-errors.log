@@ -1,0 +1,2 @@
+# ginStu/controllers/admin
+controllers\admin\adminController.go:36:6: con.Add2 undefined (type Controller has no field or method Add2)
