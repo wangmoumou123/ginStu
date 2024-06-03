@@ -6,10 +6,10 @@ import (
 )
 
 func IndexInit(r *gin.Engine) {
-	adminRoute := r.Group("/index")
+	indexRoute := r.Group("/index")
 	{
-		adminRoute.GET("/", index.Controller{}.Index)
-		adminRoute.GET("/add", index.Controller{}.Add)
-		adminRoute.GET("/edit", index.Controller{}.Edit)
+		indexRoute.GET("/", index.Controller{}.Index)
+		indexRoute.GET("/add", index.Controller{}.Add)
+		indexRoute.GET("/edit", index.Controller{}.Edit)
 	}
 }

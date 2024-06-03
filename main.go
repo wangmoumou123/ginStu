@@ -10,6 +10,7 @@ func main() {
 	routes.AdminInit(r)
 	routes.ArticleInit(r)
 	routes.IndexInit(r)
+	routes.ActionInit(r)
 	err := r.Run()
 	if err != nil {
 
