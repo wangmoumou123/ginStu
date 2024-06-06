@@ -14,7 +14,12 @@ func InitMiddleware(c *gin.Context) {
 	} else {
 		tools.Log("r", "error")
 	}
+
 	c.Next()
 	c.Set("age", 18)
+	//go func() {
+	//	time.Sleep(time.Second*2)
+	//	fmt.Println("middleware  go  执行")
+	//}()
 
 }

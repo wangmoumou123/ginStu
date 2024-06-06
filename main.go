@@ -7,6 +7,8 @@ import (
 
 func main() {
 	r := gin.Default()
+	r.LoadHTMLGlob("templates/*/**")
+	r.MaxMultipartMemory = 8 << 20
 	routes.AdminInit(r)
 	routes.ArticleInit(r)
 	routes.IndexInit(r)

@@ -14,6 +14,9 @@ func AdminInit(r *gin.Engine) {
 		adminRoute.GET("/", admin.Controller{}.Index)
 		adminRoute.GET("/add", admin.Controller{}.Add)
 		adminRoute.GET("/edit", admin.Controller{}.Edit)
+		adminRoute.GET("/upload", admin.Controller{}.UploadPage)
+		//adminRoute.POST("/upload", admin.Controller{}.Upload)
+		adminRoute.POST("/upload", admin.Controller{}.UploadFiles)
 	}
 	//time.Now().UnixNano()
 }

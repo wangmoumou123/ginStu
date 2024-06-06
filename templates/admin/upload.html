@@ -1,0 +1,21 @@
+{{define "admin/upload.html"}}
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>upload</title>
+    </head>
+    <body>
+
+    <form action="/admin/upload" method="post" enctype="multipart/form-data">
+        <label>
+            u_n: <input type="text" placeholder="name">
+            u_i: <input type="file" name="file[]">
+            u_i2: <input type="file" name="file[]">
+        </label>
+        <input type="submit" name="submit">
+
+    </form>
+    </body>
+    </html>
+{{end}}
