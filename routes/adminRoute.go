@@ -19,4 +19,17 @@ func AdminInit(r *gin.Engine) {
 		adminRoute.POST("/upload", admin.Controller{}.UploadFiles)
 	}
 	//time.Now().UnixNano()
+
+	userRoute := r.Group("/user")
+	userRoute.GET("/", admin.UserController{}.Get)
+	userRoute.POST("/add", admin.UserController{}.Add)
+	userRoute.PUT("/edit", admin.UserController{}.Edit)
+	userRoute.DELETE("/del", admin.UserController{}.Del)
+
+	articleRoute := r.Group("/article2")
+	articleRoute.GET("/", admin.ArticleController{}.Get)
+
+	articleCateRoute := r.Group("/articleCate")
+	articleCateRoute.GET("/", admin.ArticleCateController{}.Get)
+
 }
