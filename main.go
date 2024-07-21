@@ -24,7 +24,12 @@ func main() {
 
 	redisIp := cfg.Section("redis").Key("ip").String()
 	redisPort := cfg.Section("redis").Key("port").String()
+	cfg.Section("").Key("class").SetValue("wst")
 
+	err = cfg.SaveTo("./conf/app.ini")
+	if err != nil {
+		return
+	}
 	mysqlDSN := fmt.Sprintf("%v:%v@tcp(%v:%v)/%v?charset=utf8mb4&parseTime=True&loc=Local", mysqlUser, mysqlPwd, mysqlIp, mysqlPort, mysqlDatabase)
 	redisDSN := fmt.Sprintf("%v:%v", redisIp, redisPort)
 
