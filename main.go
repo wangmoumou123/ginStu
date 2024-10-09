@@ -39,6 +39,7 @@ func main() {
 	r.Use(sessions.Sessions("mySession", modules.Store))
 	r.LoadHTMLGlob("templates/*/**")
 	r.MaxMultipartMemory = 8 << 20
+
 	routes.AdminInit(r)
 	routes.ArticleInit(r)
 	routes.IndexInit(r)
